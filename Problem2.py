@@ -1,9 +1,11 @@
 #author chehrnrooth answer: 4613732
-a, b = 0, 1
+def fib(maximum):
+	a, b = 0, 1
+	count = 0
+	while a < maximum:
+		a, b = b, a+b
+		if b%2 == 0:
+			count+=b
+	return count
 maximum = 4000000
-count = 0
-while a < 4000000:
-	a, b = b, a+b
-	if b%2 == 0:
-		count+=b
-print('This is the sum of the fibonacci number',count)
+print 'The sum of the even fibonacci numbers under', maximum, 'is', fib(maximum)
