@@ -1,16 +1,9 @@
-#@author chehrnrooth
-def prime(x):
-  '''
-  Input: Int for max prime
-  Output: prime, sum at that time, return sum overall
-  '''
-	count = 0
-	for x in range(2, x):
-		for i in range (2, y):
-			if x%i == 0:
-				break
-		else:
-			print x, count
-			count+=x
-	return count
-print prime(2000000)
+#@author chehrnrooth, with help from the internet.
+sieve = [True]*2000000 #creates a sieve of 2 million
+def mark(sieve, x):
+	for i in xrange(x+x, len(sieve), x): #skips around with step x
+		sieve[i] = False
+for x in xrange(2, int(len(sieve)**0.5)+1):
+	if sieve[x]: 
+		mark(sieve, x) #call to def
+print sum(i for i in xrange(2, len(sieve)) if sieve[i])
